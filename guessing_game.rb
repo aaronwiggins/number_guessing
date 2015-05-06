@@ -30,6 +30,10 @@ guess_prompt = "guess a number between 1 and 100"
     puts guess_prompt
   end
   user_guess = gets.chomp.to_i
+  if b == 5 && user_guess != num
+    puts "better luck next time, that's 5 tries"
+    break
+  end
   dup_input(array, user_guess)
   if user_guess == num
     puts "that's right" + " " + finished
