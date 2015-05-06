@@ -1,5 +1,5 @@
 def random_number
-   rand(0..100)
+   rand(1..100)
 end
 
 =begin
@@ -10,10 +10,13 @@ puts number
 =end
 
 def dup_input(array, user_guess)
-  if !array.include?(user_guess)
+  if user_guess == 0
+    puts "numbers only"
+  elsif
+    !array.include?(user_guess)
     array << user_guess
   else #array.include?user_guess
-    puts "that's the same guess"
+    puts "that's the same guess n00b"
   end
 end
 
@@ -21,21 +24,20 @@ array = []
 num = random_number
 finished = "you're done here"
 puts num
+guess_prompt = "guess a number between 1 and 100"
 (1..5).each do |b|
-  puts "guess a number btw 0 and 100"
+  if b == 1
+    puts guess_prompt
+  end
   user_guess = gets.chomp.to_i
   dup_input(array, user_guess)
   if user_guess == num
     puts "that's right" + " " + finished
     break
   elsif user_guess < num
-    puts "you're too low"
+    puts "you're too low " + guess_prompt
   elsif user_guess > num
-    puts "you're too high"
+    puts "you're too high " + guess_prompt
   end
   puts "array: " + "#{array}"
 end
-
-
-#if inputs twice in a row are <, put you're guessing low a lot
-#if inputs twice in a row are >, put you're guessing high a lot
