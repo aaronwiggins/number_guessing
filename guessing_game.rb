@@ -1,4 +1,3 @@
-#create a method that picks a random number between and including 0 and 100
 def random_number
    rand(0..100)
 end
@@ -20,24 +19,23 @@ end
 
 array = []
 num = random_number
+finished = "you're done here"
 puts num
 (1..5).each do |b|
   puts "guess a number btw 0 and 100"
   user_guess = gets.chomp.to_i
   dup_input(array, user_guess)
-  p "this is an array: " + "#{array}"
   if user_guess == num
-    puts "that's right"
+    puts "that's right" + " " + finished
     break
   elsif user_guess < num
     puts "you're too low"
   elsif user_guess > num
     puts "you're too high"
   end
+  puts "array: " + "#{array}"
 end
 
-# if ((array[1] < array[0]) && < num)
-#   puts "You're guess way too low"
-# end
+
 #if inputs twice in a row are <, put you're guessing low a lot
 #if inputs twice in a row are >, put you're guessing high a lot
